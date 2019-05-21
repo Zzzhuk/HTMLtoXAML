@@ -1,0 +1,7 @@
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\HTMLtoXAML.csprojAssemblyReference.cache
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\Preview.g.cs
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\App.g.cs
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\HTMLtoXAML_MarkupCompile.cache
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\HTMLtoXAML_MarkupCompile.lref
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\MainWindow.g.cs
+D:\KPI\OP-2\HTMLtoXAML\obj\Debug\GeneratedInternalTypeHelper.g.cs

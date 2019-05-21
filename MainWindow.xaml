@@ -1,0 +1,16 @@
+﻿<Window x:Class="HTMLtoXAML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HTMLtoXAML"
+        mc:Ignorable="d"
+        Title="Incredible Interpretator for Frontend - C# Dev's" Height="450" Width="800">
+    
+    <Grid>
+        <Button x:Name="openFile_Btn" Content="Open File" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF090909" Foreground="White" BorderBrush="Black"/>
+        <Button x:Name="start_Btn" Content="Start" HorizontalAlignment="Left" Margin="624,26,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF00AB5E" Foreground="White" BorderBrush="Black"/>
+        <Label x:Name="label_HTML" Content="HTML" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <WebBrowser HorizontalAlignment="Left" Height="296" Margin="10,114,0,0" VerticalAlignment="Top" Width="352"/>
+    </Grid>
+</Window>
