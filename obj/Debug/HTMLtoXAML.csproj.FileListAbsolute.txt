@@ -29,3 +29,4 @@ D:\KPI\OP-2\HTMLtoXAML\bin\Debug\Prism.xml
 D:\KPI\OP-2\HTMLtoXAML\bin\Debug\Prism.Wpf.pdb
 D:\KPI\OP-2\HTMLtoXAML\bin\Debug\Prism.Wpf.xml
 D:\KPI\OP-2\HTMLtoXAML\obj\Debug\HTMLtoXAML.csproj.CopyComplete
+D:\KPI\OP-2\HTMLtoXAML\bin\Debug\Microsoft.Expression.Interactions.dll

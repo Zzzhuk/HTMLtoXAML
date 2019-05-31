@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
         xmlns:local="clr-namespace:HTMLtoXAML"
         mc:Ignorable="d"
         Title="Incredible Interpretator for Frontend - C# Dev's" Height="711.773" Width="1112.881">
@@ -19,11 +21,22 @@
             <ColumnDefinition Width="563*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:Preview Margin="9.8,9.6,10.4,10.4" Grid.Row="1" Grid.Column="1"/>
+        <ToggleButton 
+        Name="btnOpenPort"  HorizontalAlignment="Left" Margin="220,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="{Binding bgColor}" Foreground="White" BorderBrush="Black" Content="{Binding btnText}"
+        IsChecked="{Binding Path=PortIsOpen, Mode=OneWay}"
+        Canvas.Left="75" Canvas.Top="80">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Checked">
+                    <i:InvokeCommandAction Command="{Binding StartWatcher}"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="Unchecked">
+                    <i:InvokeCommandAction Command="{Binding StopWatcher}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ToggleButton>
         <Button x:Name="openFile_Btn" Command="{Binding OpenFile}" Content="Open File" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF090909" Foreground="White" BorderBrush="Black"/>
-        <Button x:Name="start_Btn" Command="{Binding StartWatcher}" Content="Start" HorizontalAlignment="Left" Margin="219,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF00AB5E" Foreground="White" BorderBrush="Black"/>
         <Label x:Name="label_HTML" Content="HTML" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Grid.Row="0" Grid.Column="0" Width="54"/>
         <WebBrowser HorizontalAlignment="Left" Height="558" Margin="10,4.6,0,0" VerticalAlignment="Top" Width="523" Grid.Row="2" Grid.Column="0"/>
         <Label x:Name="label_XAML" Content="XAML" HorizontalAlignment="Left" Margin="9.8,78,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Width="213" Grid.Column="1" Grid.Row="0"/>
-        <Button x:Name="stop_Btn" Content="Stop" Command="{Binding StopWatcher}" HorizontalAlignment="Left" Margin="394,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FFAB0000" Foreground="White" BorderBrush="Black"/>
     </Grid>
 </Window>
