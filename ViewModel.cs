@@ -17,8 +17,29 @@ namespace HTMLtoXAML
 	class ViewModel : INotifyPropertyChanged
 	{
 		public Model model = new Model();
+
 		public FileWatcher fw = new FileWatcher();
-		public string filePath;
+		private Uri webFilePath;
+		public Uri WebFilePath
+		{
+			get { return webFilePath; }
+			set
+			{
+				webFilePath = value;
+				OnPropertyChanged("WebFilePath");
+			}
+		}
+		private string filePath;
+		public string FilePath
+		{
+			get { return filePath;}
+			set
+			{
+				filePath = value;
+				WebFilePath = new Uri(String.Format("file:///" + value));
+				OnPropertyChanged("FilePath");
+			}
+		}
 		
 		private DefaultDialogService dialogService = new DefaultDialogService();
 
@@ -55,7 +76,7 @@ namespace HTMLtoXAML
 					  {
 						  if (dialogService.OpenFileDialog() == true)
 						  {
-							  filePath = dialogService.FilePath;
+							  FilePath = dialogService.FilePath;
 						  }
 					  }
 					  catch (Exception ex)
@@ -68,7 +89,7 @@ namespace HTMLtoXAML
 		public FileSystemWatcher watcher;
 		private void funcChangedHandler(object sender, FileSystemEventArgs e)
 		{
-			if (e.Name == Path.GetFileName(filePath))
+			if (e.Name == Path.GetFileName(FilePath))
 			{
 				MessageBox.Show("File updated");
 			}

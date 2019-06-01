@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <local:Preview Margin="9.8,9.6,10.4,10.4" Grid.Row="1" Grid.Column="1"/>
         <ToggleButton 
-        Name="btnOpenPort"  HorizontalAlignment="Left" Margin="220,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="{Binding bgColor}" Foreground="White" BorderBrush="Black" Content="{Binding btnText}"
+        Name="btnOpenPort"  HorizontalAlignment="Left" Margin="219,10,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="{Binding bgColor}" Foreground="White" BorderBrush="Black" Content="{Binding btnText}"
         IsChecked="{Binding Path=PortIsOpen, Mode=OneWay}"
         Canvas.Left="75" Canvas.Top="80">
             <i:Interaction.Triggers>
@@ -34,9 +34,10 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ToggleButton>
-        <Button x:Name="openFile_Btn" Command="{Binding OpenFile}" Content="Open File" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF090909" Foreground="White" BorderBrush="Black"/>
+        <Button x:Name="openFile_Btn" Command="{Binding OpenFile}" Content="Open File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="#FF090909" Foreground="White" BorderBrush="Black"/>
         <Label x:Name="label_HTML" Content="HTML" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Grid.Row="0" Grid.Column="0" Width="54"/>
-        <WebBrowser HorizontalAlignment="Left" Height="558" Margin="10,4.6,0,0" VerticalAlignment="Top" Width="523" Grid.Row="2" Grid.Column="0"/>
+        <WebBrowser x:Name="webBrowser" local:WebBrowserUtility.BindableSource="{Binding WebFilePath}" HorizontalAlignment="Left" Height="558" Margin="10,4.6,0,0" VerticalAlignment="Top" Width="523" Grid.Row="2" Grid.Column="0"/>
         <Label x:Name="label_XAML" Content="XAML" HorizontalAlignment="Left" Margin="9.8,78,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Width="213" Grid.Column="1" Grid.Row="0"/>
+        <Label x:Name="filePath" Content="{Binding FilePath}" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
