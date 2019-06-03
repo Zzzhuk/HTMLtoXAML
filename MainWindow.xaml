@@ -20,7 +20,7 @@
             <ColumnDefinition Width="543*"></ColumnDefinition>
             <ColumnDefinition Width="563*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:Preview Margin="9.8,9.6,10.4,10.4" Grid.Row="1" Grid.Column="1"/>
+        <local:Preview  Grid.Row="1" Grid.Column="1"/>
         <ToggleButton 
         Name="btnOpenPort"  HorizontalAlignment="Left" Margin="219,10,0,0" VerticalAlignment="Top" Width="149" FontSize="18" FontWeight="Bold" Height="42" Background="{Binding bgColor}" Foreground="White" BorderBrush="Black" Content="{Binding btnText}"
         IsChecked="{Binding Path=PortIsOpen, Mode=OneWay}"

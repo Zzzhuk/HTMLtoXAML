@@ -99,7 +99,7 @@ namespace HTMLtoXAML
 			{
 				if (e.Name == Path.GetFileName(FilePath))
 				{
-					MessageBox.Show("Updated");
+					MessageBox.Show("File has updated!");
 					interpreter.ReadAndWrite(FilePath);
 				}
 				let = true;

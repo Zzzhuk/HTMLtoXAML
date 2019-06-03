@@ -81,6 +81,7 @@
     <Compile Include="FileWatcher.cs" />
     <Compile Include="IDialogService.cs" />
     <Compile Include="Interpreter.cs" />
+    <Compile Include="Tag.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

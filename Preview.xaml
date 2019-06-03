@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:HTMLtoXAML"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
-    <StackPanel>
-        
-    </StackPanel>
+    <Grid>
+        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Coming Soon" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" Height="107" Margin="172,0"/>
+    </Grid>
 
 </UserControl>
