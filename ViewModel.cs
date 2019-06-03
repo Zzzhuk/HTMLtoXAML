@@ -16,9 +16,15 @@ namespace HTMLtoXAML
 {
 	class ViewModel : INotifyPropertyChanged
 	{
+		public ViewModel()
+		{
+			FilePath = "C:/Users/lexaz/Desktop/test.html";
+		}
 		public Model model = new Model();
-
+		bool let = false;
+		public event EventHandler<EventArgs> OnFileUpdate;
 		public FileWatcher fw = new FileWatcher();
+		public Interpreter interpreter = new Interpreter();
 		private Uri webFilePath;
 		public Uri WebFilePath
 		{
@@ -87,13 +93,24 @@ namespace HTMLtoXAML
 			}
 		}
 		public FileSystemWatcher watcher;
-		private void funcChangedHandler(object sender, FileSystemEventArgs e)
+		void funcChangedHandler(object sender, FileSystemEventArgs e)
 		{
-			if (e.Name == Path.GetFileName(FilePath))
+			if (let == false)
 			{
-				MessageBox.Show("File updated");
+				if (e.Name == Path.GetFileName(FilePath))
+				{
+					MessageBox.Show("Updated");
+					interpreter.ReadAndWrite(FilePath);
+				}
+				let = true;
 			}
+			else
+			{
+				let = false;
+			}
+			
 		}
+
 
 
 		private RelayCommand startWatcher;
@@ -111,10 +128,10 @@ namespace HTMLtoXAML
 					  try
 					  {
 						  watcher = new FileSystemWatcher(Path.GetDirectoryName(filePath));
-
-						  watcher.Changed += funcChangedHandler;
-						  watcher.EnableRaisingEvents = true; 
-						}
+						  watcher.NotifyFilter = NotifyFilters.LastWrite;
+						  watcher.Changed += new FileSystemEventHandler(funcChangedHandler);
+						  watcher.EnableRaisingEvents = true;
+					  }
 					  catch (Exception ex)
 					  {
 						  dialogService.ShowMessage(ex.Message);

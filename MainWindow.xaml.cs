@@ -24,6 +24,8 @@ namespace HTMLtoXAML
 	public MainWindow()
 		{
 			InitializeComponent();
+			var vm = DataContext as ViewModel;
+			vm.OnFileUpdate += (o, e) => { webBrowser.Refresh(); };
 		}
 	}
 }

@@ -16,34 +16,7 @@ namespace HTMLtoXAML
 {
 	class Model
 	{
-		bool activeWatcher = false;
-		/*[PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
-		public void Run(string path)
-		{
-			activeWatcher = true;
-			string fileName = Path.GetFileName(path);
-			using (FileSystemWatcher watcher = new FileSystemWatcher())
-			{
-				if (activeWatcher)
-				{
-					watcher.EnableRaisingEvents = true;
-					watcher.Path = path.Replace(fileName, "");
-
-
-					watcher.NotifyFilter = NotifyFilters.LastWrite;
-
-					watcher.Filter = fileName;
-
-					watcher.Changed += OnChanged;
-				}
-			}
-		}
-		public void Stop()
-		{
-			activeWatcher = false;
-		}
-		private static void OnChanged(object source, FileSystemEventArgs e) =>
-			MessageBox.Show("WORK!");*/
+		
 	}
 	public class RelayCommand : ICommand
 	{
@@ -112,7 +85,7 @@ namespace HTMLtoXAML
 			{
 				string uri = e.NewValue as string;
 
-				browser.Navigate(!String.IsNullOrEmpty(uri) ? new Uri(uri) : null);
+				browser.Navigate(new Uri(uri)); 
 			}
 		}
 	}
